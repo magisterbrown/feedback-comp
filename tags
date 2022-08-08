@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+author	setup.py	/^      author='magisterbrownie',$/;"	v
+author_email	setup.py	/^      author_email='magisterbrownie@gmail.com',$/;"	v
+deps	setup.py	/^deps = f.readlines()$/;"	v
+description	setup.py	/^      description='',$/;"	v
+f	setup.py	/^f = open("requirements.txt", "r")$/;"	v
+global_pack	setup.py	/^global_pack = list(filter(lambda x:not ('file' in x), deps))$/;"	v
+install_requires	setup.py	/^      install_requires=global_pack$/;"	v
+packages	setup.py	/^      packages=find_packages(),$/;"	v
+train_epoch	build/lib/feedback/training/loop.py	/^def train_epoch(dataloader: DataLoader, model: nn.Module, optimizer):$/;"	f
+train_epoch	feedback/training/loop.py	/^def train_epoch(dataloader: DataLoader, model: nn.Module, optimizer):$/;"	f
+tut	build/lib/feedback/training/loop.py	/^def tut():$/;"	f
+tut	feedback/training/loop.py	/^def tut():$/;"	f
+url	setup.py	/^      url='',$/;"	v
+version	setup.py	/^      version='1.0',$/;"	v

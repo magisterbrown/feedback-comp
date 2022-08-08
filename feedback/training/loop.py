@@ -3,9 +3,8 @@ import torch
 import torch.nn as nn
 
 
-def train_epoch(dataloader: DataLoader, model: nn.Module, optimizer):
+def train_epoch(dataloader: DataLoader, model: nn.Module, optimizer, device=torch.device("cpu")):
     model.train()
-    device = torch.device("cpu")
     loss = nn.CrossEntropyLoss()
     
     dataset_size = 0
@@ -26,6 +25,7 @@ def train_epoch(dataloader: DataLoader, model: nn.Module, optimizer):
         
         running_loss += (lss.item() * batch_size)
         dataset_size += batch_size
-        
-    return running_loss / dataset_size
+    
+    final_loss = running_loss / dataset_size
+    return final_loss
     
