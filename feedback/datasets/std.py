@@ -14,10 +14,10 @@ class EssayDs(Dataset):
         return len(self.df)
     
     def __getitem__(self, idx):
-        text = train.iloc[idx]['discourse_text']
+        text = self.df.iloc[idx]['discourse_text']
         tokens = tokenizer(text,max_length=self.max_size) 
         
-        target = self.targconv[train.iloc[idx]['discourse_effectiveness']]
+        target = self.targconv[self.df.iloc[idx]['discourse_effectiveness']]
         res = {
             'input_ids':tokens['input_ids'],
             'attention_mask':tokens['attention_mask'],
