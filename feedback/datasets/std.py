@@ -4,9 +4,9 @@ import numpy as np
 from transformers import AutoTokenizer
 
 class EssayDs(Dataset):
-    def __init__(self, df, tokinizer, targets, max_size=512):
+    def __init__(self, df, tokenizer, targets, max_size=512):
         self.df = df
-        self.tokinizer = tokinizer
+        self.tokenizer = tokenizer
         self.max_size = max_size
         self.targconv = targets
         
@@ -15,7 +15,7 @@ class EssayDs(Dataset):
     
     def __getitem__(self, idx):
         text = self.df.iloc[idx]['discourse_text']
-        tokens = tokenizer(text,max_length=self.max_size) 
+        tokens = self.tokenizer(text,max_length=self.max_size) 
         
         target = self.targconv[self.df.iloc[idx]['discourse_effectiveness']]
         res = {
