@@ -52,7 +52,7 @@ class FoldsEssaysDs(FoldsEssays):
         
         return train, test
 
-    def get_tokenizer():
+    def get_tokenizer(self):
         return self.tokenizer
     
 def get_targets(vals) -> dict:
