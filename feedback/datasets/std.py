@@ -51,6 +51,9 @@ class FoldsEssaysDs(FoldsEssays):
         test = EssayDs(test, self.tokenizer, self.targets)
         
         return train, test
+
+    def get_tokenizer():
+        return self.tokenizer
     
 def get_targets(vals) -> dict:
     uni = vals.unique()
