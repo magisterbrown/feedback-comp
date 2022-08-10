@@ -57,8 +57,6 @@ def validate_model(model,dataloader,device=torch.device("cpu")):
         outputs = model(ids, mask)
         lss = loss(outputs.logits, targets)
 
-        print(f'{step}/{len(dataloader)}')
-        
         running_loss += (lss.item() * batch_size)
         dataset_size += batch_size
     
