@@ -33,13 +33,13 @@ if __name__ == '__main__':
                               num_workers=2, shuffle=True, pin_memory=True, drop_last=True)
     
     model = AutoModelForSequenceClassification.from_pretrained("microsoft/deberta-v3-small",num_labels=3)
-#     model.cuda()
+    model.cuda()
     opt = AdamW(model.parameters(),lr=params['lr'],weight_decay=params['wd'],betas=(params['b1'],params['b2']))
     sched = get_scheduler(params['warmup'], params['epochs']*len(train_dl),opt,params['lr']*params['min_lr'])
     vld = 0
-#     for epoch in range(params['epochs']): 
-#         loss = train_epoch(train_dl,model,opt,sched,torch.device('cuda'))
-#         print('\033[1A', end='\x1b[2K')
-#         print(f'Epoch: {epoch} loss: {loss}')
+    for epoch in range(params['epochs']): 
+        loss = train_epoch(train_dl,model,opt,sched,torch.device('cuda'))
+        print('\033[1A', end='\x1b[2K')
+        print(f'Epoch: {epoch} loss: {loss}')
 
     torch.save(model.state_dict(), f'{data}full1.pt')
