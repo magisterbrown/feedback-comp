@@ -12,13 +12,13 @@ import pandas as pd
 if __name__ == '__main__':
     data = 'data/'
     params = {
-        'epochs':12,
+        'epochs':9,
         'lr':0.000003,
-        'min_lr': 0.004612,
-        'warmup':174,
-        'wd':0.007764,
-        'b1':0.645282,
-        'b2':0.784831,
+        'min_lr': 0.001257,
+        'warmup':149,
+        'wd':0.000520,
+        'b1':0.557623,
+        'b2':0.639269,
         # 'batch_size':trial.suggest_int('batch_size',16,48),
     }
     params['batch_size'] = 16
@@ -42,4 +42,4 @@ if __name__ == '__main__':
         print('\033[1A', end='\x1b[2K')
         print(f'Epoch: {epoch} loss: {loss}')
 
-    torch.save(model.state_dict(), f'{data}full1.pt')
+    torch.save(model.state_dict(), f'{data}full2.pt')
